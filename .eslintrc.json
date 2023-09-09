@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["next/core-web-vitals", "airbnb"],
+  "rules": {
+    "semi": "error",
+    "quotes": ["error", "double"],
+    "no-console": "warn",
+    "import/extensions": "off",
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx", ".ts", ".tsx"]}],
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "import/prefer-default-export": "off"
+  }
 }
