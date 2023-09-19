@@ -4,7 +4,7 @@ import Menu from "./Menu";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-slate-950">
       <Title />
       <Menu />
     </div>

@@ -1,9 +1,8 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -14,6 +13,19 @@ const config: Config = {
     },
   },
   // eslint-disable-next-line global-require
-  plugins: [require("daisyui")],
+  plugins: [
+    // eslint-disable-next-line global-require
+    require("daisyui"),
+    plugin(({
+      // eslint-disable-next-line no-unused-vars
+      addBase, addComponents, addUtilities, theme,
+    }) => {
+      addUtilities({
+        ".vertical-rl": {
+          writingMode: "vertical-rl",
+        },
+      });
+    }),
+  ],
 };
 export default config;

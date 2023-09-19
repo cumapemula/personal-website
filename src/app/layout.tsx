@@ -1,6 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import React from "react";
+import { Figtree } from "next/font/google";
+
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${figtree.className} bg-slate-950`}>
       <body>{children}</body>
     </html>
   );

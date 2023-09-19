@@ -1,5 +1,7 @@
+/* eslint-disable react/no-array-index-key */
 import { NAVBAR_MENU } from "@/common/constant/menu";
 import React from "react";
+import SocialMedia from "../../elements/SocialMedia";
 
 export default function MobileMenu() {
   return (
@@ -7,7 +9,7 @@ export default function MobileMenu() {
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-5 w-5 text-orange-700"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -22,15 +24,18 @@ export default function MobileMenu() {
       </label>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 h-screen items-center justify-center backdrop-blur-md capitalize"
+        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-950 text-orange-700 rounded-box w-52 h-screen items-center justify-center capitalize"
       >
-        {NAVBAR_MENU?.map((menu) => (
-          <li className="my-4">
-            <a href="/">
-              {menu}
-            </a>
+        {NAVBAR_MENU?.map((menu, index) => (
+          <li key={index} className="my-4 hover:bg-orange-700 rounded transition-all duration-300">
+            <a href="/">{menu}</a>
           </li>
         ))}
+        <li>
+          <div className="flex p-5 gap-3">
+            <SocialMedia />
+          </div>
+        </li>
       </ul>
     </div>
   );
